@@ -12,111 +12,441 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #1b2838;
-            color: white;
+        :root {
+            --bg-main: #0b1020;
+            --bg-secondary: #131a2e;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --accent: #6c5ce7;
+            --accent2: #00d4ff;
+            --text: #f5f6fa;
+            --text-soft: #9ca3af;
+            --border: rgba(255, 255, 255, 0.08);
         }
 
-        /* Navbar */
+ 
+        body {
+            font-family: 'Poppins', sans-serif;
+
+            background:
+                radial-gradient(circle at top left, #182848 0%, transparent 30%),
+                radial-gradient(circle at bottom right, #3b1d60 0%, transparent 30%),
+                var(--bg-main);
+
+            color: var(--text);
+
+            min-height: 100vh;
+        }
+
+        /* =========================
+   NAVBAR
+========================= */
         .navbar {
-            background-color: #171a21;
-            padding: 15px 30px;
+            width: 100%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            padding: 18px 50px;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(10, 15, 30, 0.75);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid var(--border);
         }
 
+        /* Logo */
         .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #66c0f4;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+
+            color: var(--text);
+        }
+
+        .logo::after {
+            content: "STore";
+            color: var(--accent2);
+        }
+
+        /* Nav */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
         }
 
         .nav-links a {
-            color: #b8b6b4;
+            color: var(--text-soft);
             text-decoration: none;
-            margin-left: 20px;
-            font-size: 14px;
+
+            font-size: 15px;
+            font-weight: 500;
+
+            transition: 0.3s ease;
+            position: relative;
         }
 
         .nav-links a:hover {
-            color: #fff;
+            color: var(--accent2);
         }
 
-        /* Hero Section */
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+
+            left: 0;
+            bottom: -6px;
+
+            width: 0%;
+            height: 2px;
+
+            background: linear-gradient(to right, var(--accent), var(--accent2));
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* =========================
+   HERO SECTION
+========================= */
         .hero {
-            background: linear-gradient(to bottom, #1b2838, #2a475e);
-            padding: 50px 30px;
+            height: 65vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
             text-align: center;
+            padding: 40px;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Glow Background */
+        .hero::before {
+            content: '';
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            background: radial-gradient(circle, var(--accent2), transparent 70%);
+
+            top: -200px;
+            right: -150px;
+
+            opacity: 0.15;
+        }
+
+        .hero::after {
+            content: '';
+
+            position: absolute;
+
+            width: 400px;
+            height: 400px;
+
+            background: radial-gradient(circle, var(--accent), transparent 70%);
+
+            bottom: -200px;
+            left: -150px;
+
+            opacity: 0.15;
         }
 
         .hero h1 {
-            font-size: 40px;
-            margin-bottom: 10px;
+            font-size: 58px;
+            font-weight: 700;
+
+            margin-bottom: 15px;
+
+            position: relative;
+            z-index: 2;
+
+            line-height: 1.2;
         }
 
         .hero p {
-            color: #8f98a0;
-            font-size: 18px;
+            color: var(--text-soft);
+
+            font-size: 20px;
+            max-width: 700px;
+
+            position: relative;
+            z-index: 2;
         }
 
-        /* Game Grid */
+        /* =========================
+   CONTAINER
+========================= */
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 30px;
+            max-width: 1300px;
+            margin: auto;
+            padding: 50px 30px;
         }
 
+        /* Section Title */
+        .container h2 {
+            font-size: 34px;
+            margin-bottom: 40px;
+
+            position: relative;
+            display: inline-block;
+        }
+
+        .container h2::after {
+            content: '';
+
+            position: absolute;
+
+            left: 0;
+            bottom: -10px;
+
+            width: 70px;
+            height: 4px;
+
+            border-radius: 20px;
+
+            background: linear-gradient(to right, var(--accent), var(--accent2));
+        }
+
+        /* =========================
+   GAME GRID
+========================= */
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
+
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+
+            gap: 28px;
         }
 
+        /* Remove underline */
+        .game-link {
+            text-decoration: none;
+        }
+
+        /* =========================
+   GAME CARD
+========================= */
         .game-card {
-            background-color: #16202d;
-            border-radius: 5px;
+            background: var(--card-bg);
+
+            border: 1px solid var(--border);
+
+            border-radius: 22px;
+
             overflow: hidden;
-            transition: transform 0.3s;
+
+            transition: 0.4s ease;
+
+            backdrop-filter: blur(10px);
+
+            position: relative;
         }
 
+        /* Hover Glow */
         .game-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+
+            box-shadow:
+                0 10px 30px rgba(0, 212, 255, 0.18),
+                0 0 20px rgba(108, 92, 231, 0.12);
         }
 
+        /* =========================
+   IMAGE
+========================= */
         .game-image {
-            height: 180px;
+            width: 100%;
+            height: 200px;
+
             overflow: hidden;
+
+            position: relative;
+        }
+
+        /* Overlay */
+        .game-image::after {
+            content: '';
+
+            position: absolute;
+            inset: 0;
+
+            background: linear-gradient(to top,
+                    rgba(0, 0, 0, 0.6),
+                    transparent);
+
+            opacity: 0;
+
+            transition: 0.4s;
+        }
+
+        .game-card:hover .game-image::after {
+            opacity: 1;
         }
 
         .game-image img {
             width: 100%;
             height: 100%;
+
             object-fit: cover;
+
+            transition: 0.5s ease;
         }
 
+        .game-card:hover img {
+            transform: scale(1.08);
+        }
+
+        /* =========================
+   GAME INFO
+========================= */
         .game-info {
-            padding: 15px;
+            padding: 20px;
         }
 
+        /* Title */
         .game-title {
+            color: var(--text);
+
+            font-size: 20px;
+            font-weight: 600;
+
+            margin-bottom: 12px;
+
+            transition: 0.3s;
+        }
+
+        .game-card:hover .game-title {
+            color: var(--accent2);
+        }
+
+        /* Price */
+        .game-price {
+            color: #8fff3c;
+
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        /* =========================
+   BUTTON
+========================= */
+        .btn-steam {
+            display: inline-block;
+
+            padding: 12px 22px;
+
+            border-radius: 14px;
+
+            background: linear-gradient(135deg,
+                    var(--accent),
+                    var(--accent2));
+
             color: white;
             text-decoration: none;
+            font-weight: 600;
+
+            transition: 0.3s ease;
         }
 
-        .game-price {
-            color: #a4d007;
+        .btn-steam:hover {
+            transform: scale(1.05);
+
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.25);
         }
 
-        /* Button */
-        .btn-steam {
-            background-color: #66c0f4;
-            color: #171a21;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 3px;
-            font-weight: bold;
+        /* =========================
+   SCROLLBAR
+========================= */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #111827;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom,
+                    var(--accent),
+                    var(--accent2));
+
+            border-radius: 20px;
+        }
+
+        /* =========================
+   RESPONSIVE
+========================= */
+        @media(max-width:992px) {
+
+            .hero h1 {
+                font-size: 44px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .navbar {
+                padding: 18px 25px;
+            }
+
+        }
+
+        @media(max-width:768px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                height: 55vh;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .container h2 {
+                font-size: 28px;
+            }
+
+        }
+
+        @media(max-width:500px) {
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+
         }
     </style>
 </head>
@@ -125,11 +455,9 @@
 
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="logo">GameSTore</div>
+        <div class="logo">Game</div>
         <div class="nav-links">
             <a href="#">Beranda</a>
-            <a href="#">Library Saya</a>
-            <a href="#">Login Steam</a>
         </div>
     </nav>
 

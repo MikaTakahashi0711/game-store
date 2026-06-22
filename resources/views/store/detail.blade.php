@@ -13,128 +13,622 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #1b2838;
-            color: white;
+        :root {
+            --bg-main: #0b1020;
+            --bg-secondary: #131a2e;
+            --card-bg: rgba(255, 255, 255, 0.04);
+            --accent: #7c5cff;
+            --accent2: #00d4ff;
+            --text: #f5f6fa;
+            --text-soft: #aab2c5;
+            --border: rgba(255, 255, 255, 0.08);
         }
 
+        /* =========================
+   BODY
+========================= */
+        body {
+            font-family: 'Poppins', sans-serif;
+
+            background:
+                radial-gradient(circle at top left, #182848 0%, transparent 30%),
+                radial-gradient(circle at bottom right, #2d1b69 0%, transparent 35%),
+                var(--bg-main);
+
+            color: var(--text);
+
+            min-height: 100vh;
+        }
+
+        /* =========================
+   NAVBAR
+========================= */
         .navbar {
-            background: #171a21;
-            padding: 15px 30px;
+            width: 100%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            padding: 18px 50px;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(10, 15, 30, 0.75);
+            backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid var(--border);
         }
 
+        /* Logo */
         .logo {
-            color: #66c0f4;
             text-decoration: none;
-            font-size: 24px;
-            font-weight: bold;
+
+            font-size: 30px;
+            font-weight: 700;
+
+            color: white;
+
+            transition: 0.3s;
+        }
+
+        .logo::after {
+            content: 'Hub';
+            color: var(--accent2);
+        }
+
+        .logo:hover {
+            transform: scale(1.03);
+        }
+
+        /* Nav Links */
+        .nav-links {
+            display: flex;
+            gap: 25px;
         }
 
         .nav-links a {
-            color: #b8b6b4;
             text-decoration: none;
-            margin-left: 20px;
+
+            color: var(--text-soft);
+
+            font-size: 15px;
+            font-weight: 500;
+
+            position: relative;
+
+            transition: 0.3s;
         }
 
         .nav-links a:hover {
-            color: white;
+            color: var(--accent2);
         }
 
+        .nav-links a::after {
+            content: '';
+
+            position: absolute;
+
+            left: 0;
+            bottom: -6px;
+
+            width: 0%;
+            height: 2px;
+
+            background: linear-gradient(to right,
+                    var(--accent),
+                    var(--accent2));
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* =========================
+   CONTAINER
+========================= */
         .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
+            max-width: 1250px;
+
+            margin: 60px auto;
+
+            padding: 0 25px;
         }
 
+        /* =========================
+   BACK LINK
+========================= */
         .back-link {
-            color: #8f98a0;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
             text-decoration: none;
-            display: inline-block;
-            margin-bottom: 20px;
+
+            color: var(--text-soft);
+
+            margin-bottom: 30px;
+
+            transition: 0.3s;
         }
 
+        .back-link:hover {
+            color: var(--accent2);
+
+            transform: translateX(-5px);
+        }
+
+        /* =========================
+   DETAIL CARD
+========================= */
         .detail-card {
             display: grid;
+
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            background: #16202d;
-            padding: 30px;
-            border-radius: 10px;
+
+            gap: 40px;
+
+            background: var(--card-bg);
+
+            border: 1px solid var(--border);
+
+            border-radius: 28px;
+
+            padding: 35px;
+
+            backdrop-filter: blur(12px);
+
+            position: relative;
+
+            overflow: hidden;
         }
 
+        /* Glow Effect */
+        .detail-card::before {
+            content: '';
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            background: radial-gradient(circle,
+                    rgba(0, 212, 255, 0.25),
+                    transparent 70%);
+
+            top: -120px;
+            right: -100px;
+
+            pointer-events: none;
+        }
+
+        /* =========================
+   IMAGE
+========================= */
         .game-image {
-            height: 180px;
+            width: 100%;
+            height: 420px;
+
             overflow: hidden;
+
+            border-radius: 22px;
+
+            position: relative;
+        }
+
+        /* Overlay */
+        .game-image::after {
+            content: '';
+
+            position: absolute;
+            inset: 0;
+
+            background: linear-gradient(to top,
+                    rgba(0, 0, 0, 0.6),
+                    transparent);
+
+            opacity: 0;
+
+            transition: 0.4s;
+        }
+
+        .game-image:hover::after {
+            opacity: 1;
         }
 
         .game-image img {
             width: 100%;
             height: 100%;
+
             object-fit: cover;
+
+            transition: 0.5s ease;
         }
 
+        .game-image:hover img {
+            transform: scale(1.06);
+        }
+
+        /* =========================
+   GAME TITLE
+========================= */
         .game-title {
-            font-size: 32px;
-            margin-bottom: 15px;
+            font-size: 48px;
+            font-weight: 700;
+
+            margin-bottom: 18px;
+
+            line-height: 1.2;
         }
 
+        /* =========================
+   PRICE
+========================= */
         .game-price {
-            font-size: 28px;
-            color: #a4d007;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
-        .game-price.free {
-            color: #66c0f4;
-        }
-
-        .description {
-            color: #c7d5e0;
-            line-height: 1.8;
-            margin-bottom: 25px;
-        }
-
-        .btn-buy {
             display: inline-block;
-            padding: 15px 30px;
-            border-radius: 5px;
+
+            font-size: 34px;
+            font-weight: 700;
+
+            margin-bottom: 25px;
+
+            padding: 10px 22px;
+
+            border-radius: 14px;
+
+            background: rgba(143, 255, 60, 0.1);
+
+            color: #9dff00;
+
+            border: 1px solid rgba(143, 255, 60, 0.25);
+        }
+
+        /* Free */
+        .game-price.free {
+            background: rgba(0, 212, 255, 0.12);
+
+            color: var(--accent2);
+
+            border: 1px solid rgba(0, 212, 255, 0.25);
+        }
+
+        /* =========================
+   DESCRIPTION
+========================= */
+        .description {
+            color: var(--text-soft);
+
+            line-height: 2;
+
+            font-size: 17px;
+
+            margin-bottom: 35px;
+        }
+
+        /* =========================
+   BUTTON
+========================= */
+        .btn-buy {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 16px 35px;
+
+            border-radius: 16px;
+
             text-decoration: none;
-            font-weight: bold;
+
+            font-weight: 600;
+            font-size: 16px;
+
             color: white;
-            background: #5c7e10;
+
+            background: linear-gradient(135deg,
+                    var(--accent),
+                    var(--accent2));
+
+            transition: 0.35s ease;
+
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.15);
         }
 
+        /* Hover */
         .btn-buy:hover {
-            background: #7cb615;
+            transform: translateY(-4px) scale(1.02);
+
+            box-shadow:
+                0 15px 35px rgba(0, 212, 255, 0.28);
         }
 
+        /* Free Button */
         .btn-buy.free {
-            background: #66c0f4;
-            color: #171a21;
+            background: linear-gradient(135deg,
+                    #00c6ff,
+                    #0072ff);
+
+            color: white;
         }
 
+        /* =========================
+   FEATURES
+========================= */
         .features {
-            margin-top: 30px;
-            border-top: 1px solid #2a475e;
-            padding-top: 20px;
+            margin-top: 40px;
+
+            padding-top: 30px;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
+        /* Title */
         .features h3 {
-            margin-bottom: 10px;
+            font-size: 26px;
+
+            margin-bottom: 20px;
+
+            position: relative;
+
+            display: inline-block;
         }
 
+        .features h3::after {
+            content: '';
+
+            position: absolute;
+
+            left: 0;
+            bottom: -8px;
+
+            width: 60px;
+            height: 4px;
+
+            border-radius: 20px;
+
+            background: linear-gradient(to right,
+                    var(--accent),
+                    var(--accent2));
+        }
+
+        /* List */
         .features ul {
-            padding-left: 20px;
-            color: #c7d5e0;
+            list-style: none;
+
+            color: var(--text-soft);
         }
 
+        /* List Item */
         .features li {
+            margin-bottom: 18px;
+
+            padding-left: 32px;
+
+            position: relative;
+
+            font-size: 16px;
+        }
+
+        /* Check Icon */
+        .features li::before {
+            content: '✓';
+
+            position: absolute;
+
+            left: 0;
+            top: 0;
+
+            width: 22px;
+            height: 22px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: rgba(0, 212, 255, 0.12);
+
+            color: var(--accent2);
+
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* =========================
+   EXTRA GAMING EFFECT
+========================= */
+        .detail-card:hover {
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.35),
+                0 0 40px rgba(0, 212, 255, 0.08);
+        }
+
+        /* =========================
+   SCROLLBAR
+========================= */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #111827;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 20px;
+
+            background: linear-gradient(to bottom,
+                    var(--accent),
+                    var(--accent2));
+        }
+
+        /* =========================
+   RESPONSIVE
+========================= */
+        @media(max-width:992px) {
+
+            .detail-card {
+                grid-template-columns: 1fr;
+            }
+
+            .game-title {
+                font-size: 38px;
+            }
+
+            .game-image {
+                height: 350px;
+            }
+
+        }
+
+        @media(max-width:768px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+
+                padding: 18px 25px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .game-title {
+                font-size: 32px;
+            }
+
+            .game-price {
+                font-size: 28px;
+            }
+
+            .description {
+                font-size: 15px;
+                line-height: 1.9;
+            }
+
+        }
+
+        @media(max-width:500px) {
+
+            .container {
+                margin-top: 40px;
+            }
+
+            .detail-card {
+                padding: 20px;
+            }
+
+            .game-image {
+                height: 240px;
+            }
+
+            .game-title {
+                font-size: 28px;
+            }
+
+            .btn-buy {
+                width: 100%;
+            }
+
+        }
+
+        /* =========================
+   REQUIREMENTS
+========================= */
+
+        .requirements {
+            margin-top: 45px;
+        }
+
+        /* Title */
+        .requirements h3 {
+            font-size: 26px;
+
+            margin-bottom: 25px;
+
+            position: relative;
+
+            display: inline-block;
+        }
+
+        .requirements h3::after {
+            content: '';
+
+            position: absolute;
+
+            left: 0;
+            bottom: -8px;
+
+            width: 70px;
+            height: 4px;
+
+            border-radius: 20px;
+
+            background: linear-gradient(to right,
+                    var(--accent),
+                    var(--accent2));
+        }
+
+        /* Grid */
+        .requirements-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 18px;
+        }
+
+        /* Box */
+        .requirement-box {
+            background: rgba(255, 255, 255, 0.04);
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+
+            border-radius: 18px;
+
+            padding: 18px;
+
+            transition: 0.3s ease;
+
+            backdrop-filter: blur(8px);
+        }
+
+        /* Hover */
+        .requirement-box:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 10px 25px rgba(0, 212, 255, 0.12);
+        }
+
+        /* Label */
+        .requirement-box span {
+            display: block;
+
+            color: var(--accent2);
+
+            font-size: 14px;
+
             margin-bottom: 8px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.5px;
+        }
+
+        /* Value */
+        .requirement-box p {
+            color: white;
+
+            font-size: 16px;
+
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -183,6 +677,46 @@
                     {{ $game->price_numeric == 0 ? 'Ambil Gratis' : 'Beli Sekarang' }}
 
                 </a>
+
+                <div class="requirements">
+
+                    <h3>Minimum Requirements</h3>
+
+                    <div class="requirements-grid">
+
+                        <div class="requirement-box">
+                            <span>OS</span>
+                            <p>{{ $game->os }}</p>
+                        </div>
+
+                        <div class="requirement-box">
+                            <span>Processor</span>
+                            <p>{{ $game->processor }}</p>
+                        </div>
+
+                        <div class="requirement-box">
+                            <span>Memory</span>
+                            <p>{{ $game->memory }}</p>
+                        </div>
+
+                        <div class="requirement-box">
+                            <span>Graphics</span>
+                            <p>{{ $game->graphics }}</p>
+                        </div>
+
+                        <div class="requirement-box">
+                            <span>Storage</span>
+                            <p>{{ $game->storage }}</p>
+                        </div>
+
+                        <div class="requirement-box">
+                            <span>DirectX</span>
+                            <p>{{ $game->directx }}</p>
+                        </div>
+
+                    </div>
+
+                </div>
 
                 <div class="features">
                     <h3>Fitur</h3>
