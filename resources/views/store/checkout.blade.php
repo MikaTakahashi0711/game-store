@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title }}</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -30,14 +29,11 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-
             background:
                 radial-gradient(circle at top left, #1c2f59 0%, transparent 30%),
                 radial-gradient(circle at bottom right, #2e1461 0%, transparent 35%),
                 var(--bg-main);
-
             color: var(--text);
-
             min-height: 100vh;
         }
 
@@ -47,19 +43,13 @@
 
         .navbar {
             width: 100%;
-
             display: flex;
             justify-content: space-between;
             align-items: center;
-
             padding: 18px 50px;
-
             background: rgba(10, 15, 30, 0.75);
-
             backdrop-filter: blur(14px);
-
             border-bottom: 1px solid var(--border);
-
             position: sticky;
             top: 0;
             z-index: 999;
@@ -67,9 +57,7 @@
 
         .logo {
             text-decoration: none;
-
             color: white;
-
             font-size: 30px;
             font-weight: 700;
         }
@@ -87,9 +75,7 @@
         .nav-links a {
             text-decoration: none;
             color: var(--text-soft);
-
             transition: .3s;
-
             position: relative;
         }
 
@@ -99,19 +85,14 @@
 
         .nav-links a::after {
             content: '';
-
             position: absolute;
-
             left: 0;
             bottom: -6px;
-
             width: 0%;
             height: 2px;
-
             background: linear-gradient(to right,
                     var(--accent),
                     var(--accent2));
-
             transition: .3s;
         }
 
@@ -161,36 +142,25 @@
 
         .checkout-card {
             background: rgba(255, 255, 255, 0.04);
-
             border: 1px solid rgba(255, 255, 255, 0.08);
-
             border-radius: 28px;
-
             padding: 35px;
-
             backdrop-filter: blur(14px);
-
             position: relative;
-
             overflow: hidden;
         }
 
         /* Glow Effect */
         .checkout-card::before {
             content: '';
-
             position: absolute;
-
             width: 350px;
             height: 350px;
-
             background: radial-gradient(circle,
                     rgba(0, 212, 255, 0.18),
                     transparent 70%);
-
             top: -120px;
             right: -120px;
-
             pointer-events: none;
         }
 
@@ -198,7 +168,6 @@
         .checkout-title {
             font-size: 42px;
             font-weight: 700;
-
             margin-bottom: 35px;
         }
 
@@ -208,9 +177,7 @@
 
         .checkout-grid {
             display: grid;
-
             grid-template-columns: 1.2fr .8fr;
-
             gap: 35px;
         }
 
@@ -220,27 +187,21 @@
 
         .product-card {
             background: rgba(255, 255, 255, 0.03);
-
             border: 1px solid rgba(255, 255, 255, 0.06);
-
             border-radius: 24px;
-
             overflow: hidden;
         }
 
         .product-image {
             width: 100%;
             height: 320px;
-
             overflow: hidden;
         }
 
         .product-image img {
             width: 100%;
             height: 100%;
-
             object-fit: cover;
-
             transition: .5s ease;
         }
 
@@ -254,52 +215,36 @@
 
         .game-badge {
             display: inline-block;
-
             padding: 8px 18px;
-
             border-radius: 30px;
-
             margin-bottom: 18px;
-
             font-size: 13px;
             font-weight: 600;
-
             background: rgba(0, 212, 255, 0.12);
-
             color: var(--accent2);
-
             border: 1px solid rgba(0, 212, 255, 0.2);
         }
 
         .product-title {
             font-size: 34px;
             font-weight: 700;
-
             margin-bottom: 20px;
         }
 
         .product-description {
             color: var(--text-soft);
-
             line-height: 2;
-
             margin-bottom: 28px;
         }
 
         .product-price {
             display: inline-block;
-
             font-size: 30px;
             font-weight: 700;
-
             color: var(--green);
-
             background: rgba(143, 255, 60, 0.1);
-
             border: 1px solid rgba(143, 255, 60, 0.25);
-
             padding: 12px 24px;
-
             border-radius: 16px;
         }
 
@@ -309,20 +254,15 @@
 
         .payment-panel {
             background: rgba(255, 255, 255, 0.03);
-
             border: 1px solid rgba(255, 255, 255, 0.06);
-
             border-radius: 24px;
-
             padding: 28px;
-
             height: fit-content;
         }
 
         .panel-title {
             font-size: 24px;
             font-weight: 700;
-
             margin-bottom: 25px;
         }
 
@@ -330,9 +270,7 @@
         .payment-methods {
             display: flex;
             flex-direction: column;
-
             gap: 16px;
-
             margin-bottom: 30px;
         }
 
@@ -340,27 +278,18 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-
             padding: 18px 20px;
-
             border-radius: 18px;
-
             background: rgba(255, 255, 255, 0.04);
-
             border: 1px solid rgba(255, 255, 255, 0.08);
-
             transition: .3s ease;
-
             cursor: pointer;
         }
 
         .method-option:hover {
             transform: translateY(-3px);
-
             border-color: var(--accent2);
-
             background: rgba(0, 212, 255, 0.08);
-
             box-shadow:
                 0 10px 25px rgba(0, 212, 255, 0.12);
         }
@@ -374,15 +303,11 @@
         .method-icon {
             width: 48px;
             height: 48px;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             border-radius: 14px;
-
             background: rgba(255, 255, 255, 0.05);
-
             font-size: 22px;
         }
 
@@ -393,14 +318,12 @@
 
         .method-sub {
             font-size: 13px;
-
             color: var(--text-soft);
         }
 
         .method-option input {
             width: 18px;
             height: 18px;
-
             accent-color: #00d4ff;
         }
 
@@ -410,28 +333,21 @@
 
         .total-section {
             margin-top: 10px;
-
             padding: 25px;
-
             border-radius: 20px;
-
             background: rgba(255, 255, 255, 0.03);
-
             border: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .total-row {
             display: flex;
             justify-content: space-between;
-
             margin-bottom: 15px;
-
             color: var(--text-soft);
         }
 
         .total-price {
             color: var(--green);
-
             font-size: 26px;
             font-weight: 700;
         }
@@ -464,25 +380,17 @@
 
         .benefits li::before {
             content: '✓';
-
             position: absolute;
-
             left: 0;
             top: 0;
-
             width: 20px;
             height: 20px;
-
             display: flex;
             justify-content: center;
             align-items: center;
-
             border-radius: 50%;
-
             background: rgba(0, 212, 255, 0.12);
-
             color: var(--accent2);
-
             font-size: 12px;
             font-weight: bold;
         }
@@ -493,32 +401,22 @@
 
         .btn-pay {
             width: 100%;
-
             padding: 18px;
-
             border: none;
-
             border-radius: 18px;
-
             background: linear-gradient(135deg,
                     var(--accent),
                     var(--accent2));
-
             color: white;
-
             font-size: 17px;
             font-weight: 600;
-
             cursor: pointer;
-
             transition: .35s ease;
-
             margin-top: 28px;
         }
 
         .btn-pay:hover {
             transform: translateY(-4px);
-
             box-shadow:
                 0 15px 35px rgba(0, 212, 255, 0.25);
         }
@@ -529,17 +427,11 @@
 
         .notice {
             margin-top: 25px;
-
             padding: 18px;
-
             border-radius: 18px;
-
             background: rgba(255, 255, 255, 0.04);
-
             border: 1px solid rgba(255, 255, 255, 0.08);
-
             color: var(--text-soft);
-
             line-height: 1.8;
         }
 
@@ -682,186 +574,77 @@
 
                     <div class="payment-methods">
 
-                        <!-- DANA -->
+                        <!-- QRIS (All Payment) -->
                         <label class="method-option">
-
                             <div class="method-left">
-
-                                <div class="method-icon">
-                                    💳
-                                </div>
-
+                                <div class="method-icon">📱</div>
                                 <div>
-                                    <div class="method-name">
-                                        Dana
-                                    </div>
-
-                                    <div class="method-sub">
-                                        Instant Payment
-                                    </div>
+                                    <div class="method-name">QRIS</div>
+                                    <div class="method-sub">Pembayaran dengan QR Code</div>
                                 </div>
-
                             </div>
-
-                            <input type="radio" name="payment_method" value="Dana">
-
+                            <input type="radio" name="payment_method" value="QRIS">
                         </label>
 
-                        <!-- GOPAY -->
-                        <label class="method-option">
+                        <!-- TOTAL -->
+                        <div class="total-section">
 
-                            <div class="method-left">
+                            <div class="total-row">
+                                <span>Harga Game</span>
 
-                                <div class="method-icon">
-                                    📱
-                                </div>
-
-                                <div>
-                                    <div class="method-name">
-                                        GoPay
-                                    </div>
-
-                                    <div class="method-sub">
-                                        Fast Transaction
-                                    </div>
-                                </div>
-
+                                <span>
+                                    @if ($game->price_numeric == 0)
+                                        Free
+                                    @else
+                                        Rp {{ number_format($game->price_numeric, 0, ',', '.') }}
+                                    @endif
+                                </span>
                             </div>
 
-                            <input type="radio" name="payment_method" value="GoPay">
-
-                        </label>
-
-                        <!-- OVO -->
-                        <label class="method-option">
-
-                            <div class="method-left">
-
-                                <div class="method-icon">
-                                    💰
-                                </div>
-
-                                <div>
-                                    <div class="method-name">
-                                        OVO
-                                    </div>
-
-                                    <div class="method-sub">
-                                        Secure Payment
-                                    </div>
-                                </div>
-
+                            <hr style="margin:18px 0; border-color:#26344d;">
+                            <div class="total-row">
+                                <strong>Total</strong>
+                                <span class="total-price">
+                                    @if ($game->price_numeric == 0)
+                                        Free
+                                    @else
+                                        Rp {{ number_format($game->price_numeric, 0, ',', '.') }}
+                                    @endif
+                                </span>
                             </div>
-
-                            <input type="radio" name="payment_method" value="OVO">
-
-                        </label>
-
-                        <!-- BANK -->
-                        <label class="method-option">
-
-                            <div class="method-left">
-
-                                <div class="method-icon">
-                                    🏦
-                                </div>
-
-                                <div>
-                                    <div class="method-name">
-                                        Transfer Bank
-                                    </div>
-
-                                    <div class="method-sub">
-                                        BCA / BRI / Mandiri
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <input type="radio" name="payment_method" value="Transfer Bank">
-
-                        </label>
-
-                    </div>
-
-                    <!-- TOTAL -->
-                    <div class="total-section">
-
-                        <div class="total-row">
-                            <span>Harga Game</span>
-
-                            <span>
-                                @if ($game->price_numeric == 0)
-                                    Free
-                                @else
-                                    Rp {{ number_format($game->price_numeric, 0, ',', '.') }}
-                                @endif
-                            </span>
                         </div>
 
-                        <div class="total-row">
-                            <span>Biaya Admin</span>
-
-                            <span>Rp 0</span>
+                        <!-- BENEFITS -->
+                        <div class="benefits">
+                            <h3>Benefit Pembelian</h3>
+                            <ul>
+                                <li>Akses game seumur hidup</li>
+                                <li>Game langsung masuk library</li>
+                                <li>Support aktif 24/7</li>
+                                <li>Transfer akun Steam tersedia</li>
+                            </ul>
                         </div>
 
-                        <hr style="margin:18px 0; border-color:#26344d;">
+                        <!-- FORM -->
+                        <form action="{{ route('checkout.process', $game->id) }}" method="POST">
 
-                        <div class="total-row">
+                            @csrf
 
-                            <strong>Total</strong>
+                            <button type="submit" class="btn-pay">
+                                Bayar Sekarang
+                            </button>
 
-                            <span class="total-price">
+                        </form>
 
-                                @if ($game->price_numeric == 0)
-                                    Free
-                                @else
-                                    Rp {{ number_format($game->price_numeric, 0, ',', '.') }}
-                                @endif
-
-                            </span>
-
+                        <!-- NOTICE -->
+                        <div class="notice">
+                            Setelah pembayaran berhasil, game akan otomatis masuk ke Library Anda dan siap dimainkan
+                            kapan saja.
                         </div>
-
                     </div>
-
-                    <!-- BENEFITS -->
-                    <div class="benefits">
-
-                        <h3>Benefit Pembelian</h3>
-
-                        <ul>
-                            <li>Akses game seumur hidup</li>
-                            <li>Game langsung masuk library</li>
-                            <li>Support aktif 24/7</li>
-                            <li>Transfer akun Steam tersedia</li>
-                        </ul>
-
-                    </div>
-
-                    <!-- FORM -->
-                    <form action="{{ route('checkout.process', $game->id) }}" method="POST">
-
-                        @csrf
-
-                        <button type="submit" class="btn-pay">
-                            Bayar Sekarang
-                        </button>
-
-                    </form>
-
-                    <!-- NOTICE -->
-                    <div class="notice">
-                        Setelah pembayaran berhasil, game akan otomatis masuk ke Library Anda dan siap dimainkan kapan saja.
-                    </div>
-
                 </div>
-
             </div>
-
         </div>
-
-    </div>
 
 </body>
 

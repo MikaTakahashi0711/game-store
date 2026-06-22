@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string('graphics')->nullable();
             $table->string('storage')->nullable();
             $table->string('directx')->nullable();
-            $table->timestamps();
         });
     }
 

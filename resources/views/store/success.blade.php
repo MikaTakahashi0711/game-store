@@ -8,7 +8,6 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-
     <style>
         * {
             margin: 0;
@@ -54,35 +53,23 @@
         .success-card {
             width: 100%;
             max-width: 700px;
-
             background: rgba(255, 255, 255, 0.04);
-
             border: 1px solid rgba(255, 255, 255, 0.08);
-
             border-radius: 30px;
-
             padding: 50px;
-
             text-align: center;
-
             backdrop-filter: blur(14px);
-
             position: relative;
-
             overflow: hidden;
-
             animation: fadeUp .8s ease;
         }
 
         /* Glow */
         .success-card::before {
             content: '';
-
             position: absolute;
-
             width: 350px;
             height: 350px;
-
             background: radial-gradient(circle,
                     rgba(0, 212, 255, 0.15),
                     transparent 70%);
@@ -95,29 +82,20 @@
         .success-icon {
             width: 120px;
             height: 120px;
-
             margin: auto;
-
             border-radius: 50%;
-
             display: flex;
             justify-content: center;
             align-items: center;
-
             font-size: 60px;
-
             background:
                 linear-gradient(135deg,
                     rgba(124, 92, 255, 0.2),
                     rgba(0, 212, 255, 0.2));
-
             border: 2px solid rgba(0, 212, 255, 0.2);
-
             box-shadow:
                 0 0 40px rgba(0, 212, 255, 0.2);
-
             margin-bottom: 30px;
-
             animation: pulse 2s infinite;
         }
 
@@ -125,7 +103,6 @@
         .success-title {
             font-size: 42px;
             font-weight: 700;
-
             margin-bottom: 20px;
         }
 
@@ -136,41 +113,29 @@
         /* Description */
         .success-desc {
             color: var(--text-soft);
-
             line-height: 2;
-
             font-size: 16px;
-
             max-width: 550px;
-
             margin: auto;
-
             margin-bottom: 35px;
         }
 
         /* Game Box */
         .game-box {
             background: rgba(255, 255, 255, 0.04);
-
             border: 1px solid rgba(255, 255, 255, 0.08);
-
             border-radius: 22px;
-
             padding: 20px;
-
             display: flex;
             align-items: center;
             gap: 20px;
-
             margin-bottom: 35px;
         }
 
         .game-box img {
             width: 140px;
             height: 80px;
-
             object-fit: cover;
-
             border-radius: 14px;
         }
 
@@ -193,23 +158,16 @@
             display: flex;
             justify-content: center;
             gap: 15px;
-
             flex-wrap: wrap;
-
             margin-bottom: 35px;
         }
 
         .status-item {
             padding: 12px 20px;
-
             border-radius: 40px;
-
             background: rgba(255, 255, 255, 0.04);
-
             border: 1px solid rgba(255, 255, 255, 0.08);
-
             color: var(--text-soft);
-
             font-size: 14px;
         }
 
@@ -217,21 +175,15 @@
         .button-group {
             display: flex;
             gap: 18px;
-
             justify-content: center;
-
             flex-wrap: wrap;
         }
 
         .btn {
             padding: 16px 28px;
-
             border-radius: 16px;
-
             text-decoration: none;
-
             font-weight: 600;
-
             transition: .3s ease;
         }
 
@@ -241,13 +193,11 @@
                 linear-gradient(135deg,
                     var(--accent),
                     var(--accent2));
-
             color: white;
         }
 
         .btn-primary:hover {
             transform: translateY(-4px);
-
             box-shadow:
                 0 12px 30px rgba(0, 212, 255, 0.25);
         }
@@ -255,15 +205,12 @@
         /* Secondary */
         .btn-secondary {
             background: rgba(255, 255, 255, 0.05);
-
             border: 1px solid rgba(255, 255, 255, 0.08);
-
             color: white;
         }
 
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.08);
-
             transform: translateY(-3px);
         }
 
@@ -273,13 +220,11 @@
                 linear-gradient(135deg,
                     #1faa59,
                     #25d366);
-
             color: white;
         }
 
         .btn-whatsapp:hover {
             transform: translateY(-4px);
-
             box-shadow:
                 0 12px 30px rgba(37, 211, 102, 0.3);
         }
@@ -287,11 +232,8 @@
         /* Footer */
         .footer-note {
             margin-top: 35px;
-
             color: var(--text-soft);
-
             font-size: 14px;
-
             line-height: 1.8;
         }
 
