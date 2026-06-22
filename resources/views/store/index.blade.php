@@ -23,7 +23,7 @@
             --border: rgba(255, 255, 255, 0.08);
         }
 
- 
+
         body {
             font-family: 'Poppins', sans-serif;
 
@@ -448,6 +448,31 @@
             }
 
         }
+
+        .heroSwiper {
+            max-width: 1920px;
+            margin: 0 auto;
+        }
+
+        .heroSwiper .swiper-slide img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        .heroSwiper .caption {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(11, 16, 32, 0.7);
+            padding: 8px 16px;
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 14px;
+            max-width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 
@@ -462,10 +487,16 @@
     </nav>
 
     <!-- Hero -->
-    <section class="hero">
-        <h1>Temukan Game Favoritmu</h1>
-        <p>Bagikan dan nikmati game bersama teman-temanmu</p>
-    </section>
+    <div class="swiper heroSwiper">
+        <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide" style="position: relative;">
+                <img src="/images/requiem.jpg" alt="Promo 1" />
+                <div class="caption">Game Bagus baru rilis !1</div>
+            </div>
+            <!-- Tambah slide lain jika perlu -->
+        </div>
+    </div>
 
     <!-- Game List -->
     <div class="container">

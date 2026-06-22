@@ -427,7 +427,7 @@
             </a>
 
             <!-- WhatsApp -->
-            <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20sudah%20melakukan%20pembayaran%20untuk%20game%20{{ urlencode($game->title) }}"
+            <a href="https://wa.me/6285717585673?text=Halo%20Admin,%20saya%20sudah%20melakukan%20pembayaran%20untuk%20game%20{{ urlencode($game->title) }}"
                 target="_blank" class="btn btn-whatsapp">
 
                 Hubungi Admin
