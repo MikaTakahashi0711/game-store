@@ -626,12 +626,10 @@
                         </div>
 
                         <!-- FORM -->
-                        <form action="{{ route('checkout.process', $game->id) }}" method="POST">
-
-                            @csrf
+                        <form action="{{ route('payment.qris', $game->id) }}" method="GET">
 
                             <button type="submit" class="btn-pay">
-                                Bayar Sekarang
+                                Lanjut ke Pembayaran
                             </button>
 
                         </form>

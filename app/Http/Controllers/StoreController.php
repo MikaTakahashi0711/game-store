@@ -47,7 +47,17 @@ class StoreController extends Controller
         ]);
     }
 
-    public function processCheckout($id)
+     public function qris($id)
+    {
+        $game = Game::findOrFail($id);
+
+        return view('store.qris', [
+            'title' => 'QRIS Payment',
+            'game' => $game
+        ]);
+    }
+
+    public function success($id)
 {
     $game = Game::findOrFail($id);
 
